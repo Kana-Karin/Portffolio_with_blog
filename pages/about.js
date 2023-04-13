@@ -3,7 +3,7 @@ import Container from "@/components/container";
 import Hero from "@/components/hero";
 import Image from "next/image";
 import ProfileImage from "assets/img/progress-woman.svg";
-import { Steps, Divider } from "antd";
+import { Steps, Divider, Row, Col } from "antd";
 
 export default function About() {
   return (
@@ -13,29 +13,40 @@ export default function About() {
         {/* ----- サイトについて ----- */}
         <div>
           <Divider orientation="left">サイトについて</Divider>
-          <p>Next.js, Ant Design, BlogはmicroCMSで構成されています。</p>
-          <p>AWS Amplifyでデプロイ、管理されています。</p>
+          <Row>
+            <Col span={24}>
+              <p>Next.js, Ant Design, BlogはmicroCMSで構成されています。</p>
+              <p>AWS Amplifyでデプロイ、管理されています。</p>
+            </Col>
+          </Row>
           <br />
           <Divider orientation="left">プロフィール</Divider>
-          <Image
-            src={ProfileImage}
-            alt=""
-            style={{ width: "40%", height: "40%" }}
-            priority
-          />
-          <p>Kana 1995年生まれ</p>
-          <p>趣味はイラスト、読書、ゲーム、ジョジョ2部、3部、4部</p>
-          <p>
-            Illustratorやクリスタでイラスト、自作壁紙を描いたりするのが好きです。
-            2004年頃某ブラウザ育成ゲームに熱を注いでおり、自力でHTMLとイラレを調べ上げ、小学生のお小遣いでレンタルサーバーを借りて素材屋を運営していました。
-            競う事があまり得意ではなく、協力する方が好きです。好奇心で新情報や技術を調べて自走したり、周囲に貢献する方が得意です。
-            AWSSAAC-03,GCP,LPIC取得を目指して勉強中...
-          </p>
+          <Row>
+            <Col span={12}>
+              <p>Kana 1995年生まれ</p>
+              <p>趣味はイラスト、読書、ゲーム、ジョジョ2部、3部、4部</p>
+              <p>
+                Illustratorやクリスタでイラスト、自作壁紙を描いたりするのが好きです。
+                2004年頃某ブラウザ育成ゲームに熱を注いでおり、自力でHTMLとイラレを調べ上げ、小学生のお小遣いでレンタルサーバーを借りて素材屋を運営していました。
+                競う事があまり得意ではなく、協力する方が好きです。好奇心で新情報や技術を調べて自走したり、周囲に貢献する方が得意です。
+                AWSSAAC-03,GCP,LPIC取得を目指して勉強中...
+              </p>
+            </Col>
+            <Col span={12}>
+              <Image src={ProfileImage} alt="" layout="responsive" priority />
+            </Col>
+          </Row>
           <br />
           <Divider orientation="left">保有資格</Divider>
-          <p>Illustratorクリエイター能力認定試験 スタンダード 2022/08 取得</p>
-          <p>AWS認定クラウドプラクティショナー 2023/03 取得</p>
-          <p>ITパスポート 2023/04 取得</p>
+          <Row>
+            <Col span={24}>
+              <p>
+                Illustratorクリエイター能力認定試験 スタンダード 2022/08 取得
+              </p>
+              <p>AWS認定クラウドプラクティショナー 2023/03 取得</p>
+              <p>ITパスポート 2023/04 取得</p>
+            </Col>
+          </Row>
         </div>
         <br />
         {/* ----- 経歴* ----- */}
